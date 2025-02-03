@@ -92,6 +92,10 @@ export default function Login() {
                 </Link>
               </div>
             </form>
+
+            <div className="text-center mt-4">
+              <Link className="text-black hover:underline text-[15px]" href={"/forgot-password"}>Forgot Password?</Link>
+            </div>
           </div>
         </div>
       </div>

@@ -10,6 +10,8 @@ export interface User extends Document {
     verifyCodeExpiry: Date; 
     isVerified: boolean;
     admin:boolean
+    verificationToken:string,
+    verificationTokenExpiry:Date
   }
   
 
@@ -34,11 +36,9 @@ export interface User extends Document {
       },
     verifyCode: {
       type: String,
-      required: [true, 'Verify Code is required'],
     },
     verifyCodeExpiry: {
       type: Date,
-      required: [true, 'Verify Code Expiry is required'],
     },
     isVerified: {
       type: Boolean,
@@ -48,6 +48,12 @@ export interface User extends Document {
       type: Boolean,
       default: false,
       required:true
+    },
+    verificationToken: {
+      type: String,
+    },
+    verificationTokenExpiry: {
+      type: Date,
     },
   });
   

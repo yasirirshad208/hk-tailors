@@ -9,16 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-email/components": "^0.0.32",
     "axios": "^1.7.9",
     "bcryptjs": "^2.4.3",
+    "crypto": "^1.0.1",
     "mongoose": "^8.9.6",
     "next": "15.1.6",
     "next-auth": "^4.24.11",
     "pinata": "^1.10.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-email": "^3.0.6",
     "react-hot-toast": "^2.5.1",
-    "react-icons": "^5.4.0"
+    "react-icons": "^5.4.0",
+    "resend": "^4.1.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

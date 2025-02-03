@@ -3,22 +3,17 @@ import Select from "@/components/Select";
 import { Product as ProductType } from "@/models/Product";
 import Link from "next/link";
 
-export default async function Collections({
-  params,
-  searchParams,
-}: {
-  params: { category: string };
-  searchParams: { sort?: string };
-}) {
-  const category = params.category || "";
-  const sort = searchParams?.sort || "new-to-old";
+
+
+const Collections = async ({ params, searchParams }: { params: Promise<{ category: string }>, searchParams: Promise<{ sort?: string }> }) => {
+  const category = (await params).category || "";
+  const sort = (await searchParams).sort || "new-to-old";
 
   const paramsObj: Record<string, string> = {};
   if (category) paramsObj.category = category;
   if (sort) paramsObj.sort = sort;
 
   const queryString = new URLSearchParams(paramsObj).toString();
-
   const apiUrl = `${process.env.FRONTEND_URL}/api/getProducts?${queryString}`;
 
   const response = await fetch(apiUrl);
@@ -79,3 +74,5 @@ export default async function Collections({
     </>
   );
 }
+
+export default Collections
